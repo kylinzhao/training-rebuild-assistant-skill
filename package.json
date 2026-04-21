@@ -1,0 +1,26 @@
+{
+  "name": "training-rebuild-assistant-skill",
+  "version": "1.1.0",
+  "description": "AI-native training, recovery, and body-composition coaching skill installer for Hermes Agent.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylinzhao/training-rebuild-assistant-skill.git"
+  },
+  "bin": {
+    "training-rebuild-assistant-skill": "bin/install.js"
+  },
+  "files": [
+    "bin",
+    "skill",
+    "docs",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "examples"
+  ],
+  "engines": {
+    "node": ">=14"
+  }
+}
