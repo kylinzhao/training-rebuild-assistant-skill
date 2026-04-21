@@ -55,7 +55,39 @@ Avoids pretending to be a doctor, highlights red-flag scenarios, and discourages
 
 ## Install into Hermes
 
-### Option A: Copy into your local Hermes skills directory
+### Recommended: installer CLI
+
+The repo now ships a small installer CLI so installation is not just “copy these two files by hand”.
+
+#### Local clone
+
+```bash
+git clone https://github.com/kylinzhao/training-rebuild-assistant-skill.git
+cd training-rebuild-assistant-skill
+node bin/install.js install
+```
+
+Check current install status:
+
+```bash
+node bin/install.js check
+```
+
+What it does:
+- copies `skill/SKILL.md` to `~/.hermes/skills/wellness/training-rebuild-assistant/SKILL.md`
+- copies `docs/product-spec-v1.md` to `~/.hermes/skills/wellness/training-rebuild-assistant/references/product-spec-v1.md`
+
+#### Future `npx` form
+
+The repository already contains `package.json` + `bin/install.js`, so once it is published as an npm package, the intended command becomes:
+
+```bash
+npx training-rebuild-assistant-skill install
+```
+
+### Manual install
+
+If you do not want Node/npm involved, you can still copy the files manually:
 
 ```bash
 mkdir -p ~/.hermes/skills/wellness/training-rebuild-assistant
@@ -63,10 +95,6 @@ cp skill/SKILL.md ~/.hermes/skills/wellness/training-rebuild-assistant/SKILL.md
 mkdir -p ~/.hermes/skills/wellness/training-rebuild-assistant/references
 cp docs/product-spec-v1.md ~/.hermes/skills/wellness/training-rebuild-assistant/references/product-spec-v1.md
 ```
-
-### Option B: Keep as a Git submodule or tracked repo
-
-If you manage Hermes skills as code, add this repository to your skills tree and point Hermes to the checked-out path.
 
 ## Recommended storage layout
 
